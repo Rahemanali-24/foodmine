@@ -1,0 +1,51 @@
+    header{
+        border: 2px solid black;
+        padding:-50px !important;
+    }
+    .logo {
+        margin: 5px;
+        padding: 10px;
+    }
+    
+    .button {
+        border: none;
+        background: none;
+    }
+    
+    .Header1 {
+        /* background-image: url(img/hero-bg.jpg); */   
+        background-size: cover 100%;
+        
+        padding: 30px;
+    }
+    
+    li a {
+        font-size: 1.3rem;
+        color: #FAEED1;
+    }
+    
+    .navigation {
+        border-top: 0.5px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .introduction {
+        padding-left: 125px;
+        width: 40%;
+    }
+    
+    .introhead {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    
+    .intropara {
+        font-size: 1rem;
+    }
+    .menu {
+        
+        background-color: #FAEED1 ;
+    }
+    .menu li a{
+        color:#607274 !important;
+    }
