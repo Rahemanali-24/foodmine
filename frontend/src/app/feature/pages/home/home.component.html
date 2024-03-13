@@ -1,5 +1,11 @@
 <app-search></app-search>
 <app-tags></app-tags>
+
+<app-not-found
+  [visible] ="!foods || !foods.length"
+  notFoundMessage=""
+  resetLinkText = "Reset search">
+</app-not-found>
 <ul class="card-1">
   <li *ngFor="let food of foods">
     <a routerLink="/food/{{food.id}}">
@@ -9,8 +15,6 @@
           {{food.name}}
         </div>
         <span class= "fa-solid fa-heart favorite {{food.favorite ? '' : 'not'}}"></span>
-      
-        
         <div class="stars">
             <star-rating 
             [value]="food.stars"
@@ -19,8 +23,7 @@
                   uncheckedcolor="black"
                 size="22px"
                  [readonly]="true">
-            </star-rating>
-            
+            </star-rating>      
         </div>
         <div class="product-item-footer">
           <div class="origins">

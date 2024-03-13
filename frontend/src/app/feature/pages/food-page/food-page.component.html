@@ -1,4 +1,8 @@
-
+<app-not-found
+  [visible] ="!food"
+  notFoundMessage=""
+  resetLinkText = "Back To HomePage">
+</app-not-found>
 <div *ngIf="food" class="container">
   <div class="image-container">
       <img [src]="food.imageUrl" [alt]="food.name"/>
@@ -22,13 +26,11 @@
           >
           </star-rating>
       </div>
-
       <div class="origins">
           <span *ngFor="let origin of food.origins">
               {{origin}}
           </span>
       </div>
-
       <div class="tags">
         <span
           class="badge"

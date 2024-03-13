@@ -9,21 +9,15 @@ import { CartItem } from 'src/app/shared/models/cartitem';
   styleUrls: ['./cart-page.component.css']
 })
 export class CartPageComponent {
-
   cart! :Cart;
-
   constructor(private cartServices:CartService){
-
       this.cartServices.getCartObservable().subscribe((cart)=>{
         this.cart = cart;
       })
   }
-
-
   removeFromCart(cartItem:CartItem){
     this.cartServices.removeFromCart(cartItem.food.id);
   }
-
   changeQuantity(cartItem:CartItem,quantityInString:string){
     const quantity = parseInt(quantityInString);
     this.cartServices.changeQuantity(cartItem.food.id,quantity);

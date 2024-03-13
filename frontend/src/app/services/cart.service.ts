@@ -17,9 +17,7 @@ export class CartService {
     if (cartItem) {
       return;
     }
-
     this.cart.items.push(new CartItem(food));
-
     this.setCartToLocalStorage();
   }
 
@@ -69,6 +67,10 @@ export class CartService {
     const cartJson = localStorage.getItem('Cart');
     return  cartJson? JSON.parse(cartJson) : new Cart();
   }
+
+
+
+  
 
   constructor() {}
 }
