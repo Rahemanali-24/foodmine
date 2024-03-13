@@ -1,4 +1,4 @@
-const BASE_URL = 'https://foodmine-eight.vercel.app';
+const BASE_URL = 'https://foodmine-server-puce.vercel.app';
 
 
 
