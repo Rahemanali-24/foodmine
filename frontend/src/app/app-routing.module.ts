@@ -6,6 +6,7 @@ import { FoodPageComponent } from './feature/pages/food-page/food-page.component
 import { CartPageComponent } from './feature/pages/cart-page/cart-page.component';
 import { LoginPageComponent } from './feature/pages/login-page/login-page.component';
 import { RegisterPageComponent } from './feature/pages/register-page/register-page.component';
+import { LoadingComponent } from './feature/partials/loading/loading.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

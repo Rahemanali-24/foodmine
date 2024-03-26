@@ -7,12 +7,12 @@ import {
   HttpEventType
 } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
-import { loadingService } from 'src/app/services/loading.service';
+import { LoadingService } from 'src/app/services/loading.service';
 var pendingRequests = 0;
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {
 
-  constructor(private loadingService: loadingService) {}
+  constructor(private loadingService: LoadingService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     this.loadingService.showLoading();

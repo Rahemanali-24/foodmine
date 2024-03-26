@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './feature/partials/header/header.component';
@@ -13,7 +13,6 @@ import { FoodPageComponent } from './feature/pages/food-page/food-page.component
 import { CartPageComponent } from './feature/pages/cart-page/cart-page.component';
 import { TitleComponent } from './feature/partials/title/title.component';
 import { NotFoundComponent } from './feature/partials/not-found/not-found.component';
-import {HttpClientModule} from '@angular/common/http';
 import { LoginPageComponent } from './feature/pages/login-page/login-page.component';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -22,7 +21,10 @@ import { RegisterPageComponent } from './feature/pages/register-page/register-pa
 import { TextInputComponent } from './feature/partials/text-input/text-input.component';
 import { InputValidationComponent } from './feature/partials/input-validation/input-validation.component';
 import { DefaultButtonComponent } from './feature/partials/default-button/default-button.component';
+
 import { LoadingComponent } from './feature/partials/loading/loading.component';
+import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { LoadingComponent } from './feature/partials/loading/loading.component';
     RegisterPageComponent,
     TextInputComponent,
     DefaultButtonComponent,
-    LoadingComponent
+    
+    LoadingComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,9 @@ import { LoadingComponent } from './feature/partials/loading/loading.component';
     }),
     
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:LoadingInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

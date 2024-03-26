@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { loadingService } from 'src/app/services/loading.service';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-loading',
@@ -8,14 +8,13 @@ import { loadingService } from 'src/app/services/loading.service';
 })
 export class LoadingComponent {
   isLoading!: boolean;
+  
 
-  constructor(loadingservice: loadingService) {
+  constructor(loadingservice: LoadingService) {
     loadingservice.isLoading.subscribe((isLoading) => {
       this.isLoading = isLoading;
-
-
     });
+
+    
   }
 }
-
-
