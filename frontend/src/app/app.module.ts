@@ -17,9 +17,18 @@ import {HttpClientModule} from '@angular/common/http';
 import { LoginPageComponent } from './feature/pages/login-page/login-page.component';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { InputContainerComponent } from './feature/partials/input-container/input-container.component';
+import { RegisterPageComponent } from './feature/pages/register-page/register-page.component';
+import { TextInputComponent } from './feature/partials/text-input/text-input.component';
+import { InputValidationComponent } from './feature/partials/input-validation/input-validation.component';
+import { DefaultButtonComponent } from './feature/partials/default-button/default-button.component';
+import { LoadingComponent } from './feature/partials/loading/loading.component';
+
 @NgModule({
   declarations: [
     AppComponent,
+    InputValidationComponent,
+    TextInputComponent,  
     HeaderComponent,
     HomeComponent,
     SearchComponent,
@@ -28,7 +37,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     CartPageComponent,
     TitleComponent,
     NotFoundComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    InputContainerComponent,
+    RegisterPageComponent,
+    TextInputComponent,
+    DefaultButtonComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

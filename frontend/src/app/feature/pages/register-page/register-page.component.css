@@ -1,13 +1,11 @@
- html {
+body, html {
   margin: 0;
-  padding: 0;
-  height: 80vh;
+  padding: 10px;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Arial, sans-serif;
-  /* background-color: #f4f4f4; */
-  
+  /* background-color: #ffffff; */
 }
 
 .login-card {
@@ -16,46 +14,54 @@
   border-radius: 15px;
   box-shadow: rgba(3, 10, 3, 0.753) 0px 1px 4px, rgb(29, 66, 32) 0px 0px 0px 3px;
   overflow: hidden;
+  max-width: 90%;
+  width: 800px; 
+}
+
+.card-image {
+  flex: 1;
 }
 
 .card-image img {
-  max-width:100%; 
+  width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .login-form {
-  padding: 20px;
-  display: flex;
-  color: #2d3636;
+  flex: 1;
+  padding: 15px;
+  color: #333333;
   text-align: center;
-  flex-direction: column;
-  justify-content: center;
 }
 
-.input-group {
+
+
+text-input {
   margin-bottom: 15px;
- 
+  width: 100% !important;
 }
 
-
-.input-group label {
+.text-input label {
   display: block;
-  margin-bottom: 5px;
+  font-size: 14px;
+  color: #666;
 }
 
-.input-group input {
-  width: 100%;
+.text-input input {
   padding: 10px;
-  border: 1px solid #ddd;
+  font-size: 16px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #DED0B6 !important;
+  
 }
+
 
 button {
-  font-size: large;
-  font-weight: bolder;
+  font-size: 16px;
+  font-weight: bold;
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   border: none;
   border-radius: 5px;
   background-color: #DED0B6;
@@ -70,12 +76,20 @@ button:hover {
 
 @media (max-width: 768px) {
   .login-card {
-      flex-direction: column;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .card-image {
+    width: 100%;
   }
 
   .card-image img {
-      width: 100%; 
-      height: 200px; 
+    height: 200px;
+  }
+
+  .login-form {
+    width: 100%;
   }
 }
 .login-link{

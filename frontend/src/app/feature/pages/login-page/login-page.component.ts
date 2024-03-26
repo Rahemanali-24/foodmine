@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/shared/models/user';
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -13,7 +14,7 @@ export class LoginPageComponent implements OnInit {
   isSubmitted = false;
 
   returnUrl = '';
-
+  user: User | null = null; 
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
@@ -29,6 +30,10 @@ export class LoginPageComponent implements OnInit {
     this.loginForm.controls.email;
 
     this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
+
+    this.userService.userObservable.subscribe(user => {
+      this.user = user;
+    });
   }
 
   get fc() {
@@ -42,6 +47,8 @@ export class LoginPageComponent implements OnInit {
     this.userService.login({
       email: this.fc.email.value,
       password: this.fc.password.value,
+    }).subscribe(()=>{
+      this.router.navigateByUrl(this.returnUrl);
     });
   }
 }

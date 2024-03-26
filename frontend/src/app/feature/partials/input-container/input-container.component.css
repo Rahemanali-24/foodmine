@@ -1,0 +1,23 @@
+.container{
+    position:relative;
+    margin-bottom: 0.5rem;
+    border-radius: 0.7rem;
+    padding-top: 0.3rem;
+    width: 100%;
+    text-align: left;
+  }
+  
+  label{
+    text-align: left;
+    /* / margin-left: 0.5rem; / */
+    font-size: 0.9rem;
+    /* color: black; */
+    font-size: 1rem;
+    color: #2d3636;
+  }
+  
+  .content{
+    /* / display: flex; / */
+    align-items: center;
+  }
+  
