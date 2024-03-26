@@ -18,7 +18,7 @@ export class LoadingComponent {
 
 
 
-    // loadingservice.showLoading()
+    loadingservice.showLoading()
   }
 }
 
