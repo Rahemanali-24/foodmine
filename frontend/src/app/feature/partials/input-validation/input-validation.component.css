@@ -1,5 +1,20 @@
 .error-list{
-  color: red;
+
+
   text-align: center;
   font-size: 0.95rem;
+
+}
+.error{
+  background-color: red;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  opacity: 0.5;
+  margin-top: 0.5rem;
+  border: none;
+  font-weight: bolder;
+  border-radius: 10px;
+  width: 70%;
+
 }

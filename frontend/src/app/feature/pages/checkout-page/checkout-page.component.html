@@ -1,0 +1,72 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7">
+            <div class="card mb-4 shadow rounded-3" style="background-color: #FAEED1;">
+                <div class="card-body">
+                    <h2 class="card-title mb-4" style="color: #212529;">Order Details</h2>
+                    <form [formGroup]="checkoutForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label" style="color: #495057;">Name</label>
+                            <text-input [control]="fc.name" id="name" class="form-control"></text-input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label" style="color: #495057;">Address</label>
+                            <text-input [control]="fc.address" id="address" class="form-control"></text-input>
+                        </div>
+                    </form>
+                    <hr>
+                    <h3 class="mb-3">Order Items</h3>
+                    <div class="order-items-list">
+                        <div *ngFor="let item of order.items" class="order-item border-bottom pb-3 mb-3">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <img [src]="item.food.imageUrl" alt="Item Image" class="img-fluid rounded" style="max-width: 100px;">
+                                </div>
+                                <div class="col">
+                                    <h5 class="mb-1" style="color: #212529;">{{ item.food.name }}</h5>
+                                    <p class="mb-1" style="color: #6c757d;">Price: {{ item.food.price | currency }}</p>
+                                    <p class="mb-1" style="color: #6c757d;">Quantity: {{ item.quantity }}</p>
+                                    <p class="mb-1" style="color: #6c757d;">Total Price: {{ item.price | currency }}</p>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <!-- <p class="mb-0" style="color: #6c757d;">Condition: New</p> -->
+                                        </div>
+                                        <div>
+                                            <!-- <button class="btn btn-sm btn-outline-danger">Remove</button> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="card mb-4 shadow rounded-3" style="background-color: #FAEED1;">
+                <div class="card-body">
+                  
+                    <h2 class="card-title mb-4" style="color: #212529;">Delivery Address</h2>
+                    <p class="mb-3" style="color: #6c757d;"><strong>Name:</strong> {{ checkoutForm.value.name }}</p>
+                    <p class="mb-3" style="color: #6c757d;"><strong>Address:</strong> {{ checkoutForm.value.address }}</p>
+                    
+                        <app-map [order]="order"></app-map>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card mb-4 shadow rounded-3" style="background-color: #FAEED1;">
+                <div class="card-body text-center">
+                    <h2 class="card-title mb-4" style="color: #212529;">Proceed to Payment</h2>
+                    <p class="lead mb-4" style="color: #495057;">Please review your order details and proceed to payment to complete your purchase.</p>
+                    <p class="mb-4" style="color: #6c757d;"><strong>Total Price:</strong> {{ order.totalPrice | currency }}</p>
+                    <button class="btn btn-warning btn-lg" style="background-color: #ffc107; border-color: #ffc107;" (click)="createOrder()">Proceed to Payment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

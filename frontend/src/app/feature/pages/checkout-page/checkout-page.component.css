@@ -1,0 +1,62 @@
+/* Add your custom CSS here */
+
+
+.container {
+    margin-top: 2rem;
+  
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.btn-warning {
+    background-color: #f0ad4e;
+    border-color: #f0ad4e;
+}
+
+.btn-warning:hover {
+    background-color: #eea236;
+    border-color: #eea236;
+}
+
+.map {
+    height: 200px; /* Set an appropriate height for the map */
+    background-color: #f0f0f0; /* Fallback color */
+    border-radius: 10px;
+}
+
+.order-item {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.order-item img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 20px;
+}
+
+.order-item h5 {
+    margin-bottom: 0;
+}
+
+.order-item p {
+    margin-bottom: 5px;
+}
+.form-control{
+    background-color: #FAEED1;
+    border: none;
+ }

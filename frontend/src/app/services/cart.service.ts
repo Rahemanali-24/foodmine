@@ -69,7 +69,9 @@ export class CartService {
   }
 
 
-
+  getCart():Cart{
+    return this.cartSubject.value;
+  }
   
 
   constructor() {}

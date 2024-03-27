@@ -22,11 +22,14 @@ export class FoodService {
 
 
   getAllTags():Observable<Tag[]>{
+    console.log(this.http.get<Tag[]>(FOODS_TAG_URL));
       return this.http.get<Tag[]>(FOODS_TAG_URL);
   }
 
   getAllFoodsByTag(tag:string):Observable<Food[]>{
   return  tag === "All"?
+
+
      this.getAll()
     :
      this.http.get<Food[]>(FOODS_BY_TAG_URL+tag);
