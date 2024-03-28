@@ -5,10 +5,10 @@ export class Order{
     totalPrice!:number;
     name!: string;
     address!: string;
-    // addressLatLng?:LatLng
+    addressLatLng: any;
     paymentId!: string;
     createdAt!: string;
     status!: string;
-  addressLatLng: any;
+  
   }
   

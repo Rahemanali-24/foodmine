@@ -6,6 +6,7 @@ import cors from "cors";
 import foodRouter from './src/routers/food.router';
 import userRouter from './src/routers/user.router';
 import dbConnect from './src/configs/database.config';
+import orderRouter from './src/routers/order.router';
 dbConnect();
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(
 );
 app.use("/api/foods", foodRouter);
 app.use("/api/users", userRouter);
+app.use("/api/orders", orderRouter);
 
 app.get("/", (req, res) => {
   res.send("hello world");

@@ -26,7 +26,7 @@ router.post("/login", asyncHandler(
         const user = await UserModel.findOne({email,password});
       
           if(user){
-              res.send(generateTokenResponse(user))
+              res.send(generateTokenReponse(user))
           }else{
               res.status(HTTP_BAD_REQUEST).send("Username or Password is not valid!");
           }
@@ -56,22 +56,27 @@ router.post('/register',asyncHandler(
         }
 
         const dbUser = await UserModel.create(newUser);
-        res.send(generateTokenResponse(dbUser));
+        res.send(generateTokenReponse(dbUser));
 
     }
 ))
   
   
-  const generateTokenResponse = (user:any)=>{
-      const token = jwt.sign({
-          email:user.email,isAdmin:user.isAdmin
-      },"SomeRandomText",{
-          expiresIn:"30d"
-      });
-      user.token = token;
-      return user;
+const generateTokenReponse = (user : User) => {
+    const token = jwt.sign({
+      id: user.id, email:user.email, isAdmin: user.isAdmin
+    },process.env.JWT_SECRET!,{
+      expiresIn:"30d"
+    });
   
-     
+    return {
+      id: user.id,
+      email: user.email,
+      name: user.name,
+      address: user.address,
+      isAdmin: user.isAdmin,
+      token: token
+    };
   }
   
 
