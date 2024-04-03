@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="header">
+        <app-title title="Order Summary" fontSize="1.6rem"></app-title>
+    </div>
+    <div class="content">
+        <div class="summary">
+            <div class="summary-item">
+                <h3>Name:</h3>
+                <span>{{order.name}}</span>
+            </div>
+            <div class="summary-item">
+                <h3>Address:</h3>
+                <span>{{order.address}}</span>
+            </div>
+        </div>
+        <div class="order-items">
+            <app-order-items-list [order]="order"></app-order-items-list>
+        </div>
+    </div>
+    <div class="map">
+        <div class="map-header">
+            <app-title title="Shipping Address" fontSize="1.6rem"></app-title>
+        </div>
+        <div class="map-content">
+            <app-map [order]="order" [readonly]="true"></app-map>
+        </div>
+    </div>
+    <div class="buttons-container">
+        <div class="buttons text-center">
+            <app-paypal-button [order]="order">
+            </app-paypal-button>
+        </div>
+    </div>
+</div>

@@ -28,6 +28,9 @@ import { CheckoutPageComponent } from './feature/pages/checkout-page/checkout-pa
 import { OrderItemsListComponent } from './feature/partials/order-items-list/order-items-list.component';
 import { MapComponent } from './feature/partials/map/map.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { PaymentPageComponent } from './feature/pages/payment-page/payment-page.component';
+import { PaypalButtonComponent } from './feature/partials/paypal-button/paypal-button.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
   declarations: [
@@ -52,6 +55,8 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     CheckoutPageComponent,
     OrderItemsListComponent,
     MapComponent,
+    PaymentPageComponent,
+    PaypalButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     RatingModule,
     HttpClientModule,
     ReactiveFormsModule,
-
+    NgxPayPalModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-bottom-right',

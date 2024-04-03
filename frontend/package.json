@@ -23,6 +23,7 @@
     "jquery": "^3.7.1",
     "leaflet": "^1.9.4",
     "ng-starrating": "^1.0.20",
+    "ngx-paypal": "^11.0.0",
     "ngx-toastr": "^18.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

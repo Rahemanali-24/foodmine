@@ -27,6 +27,11 @@ asyncHandler(async (req:any, res:any) => {
 })
 );
 
+
+
+
+
+
 router.post('/pay', asyncHandler( async (req:any, res) => {
     const {paymentId} = req.body;
     const order = await getNewOrderForCurrentUser(req);
@@ -62,7 +67,7 @@ router.get('/newOrderForCurrentUser', asyncHandler( async (req:any,res ) => {
 
 
 
-export default router;
+
 
 async function getNewOrderForCurrentUser(req: any) {
     return await OrderModel.findOne({ user: req.user.id, status: OrderStatus.NEW });

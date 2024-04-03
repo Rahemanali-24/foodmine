@@ -9,6 +9,7 @@ import { RegisterPageComponent } from './feature/pages/register-page/register-pa
 // import { LoadingComponent } from './feature/partials/loading/loading.component';
 import { CheckoutPageComponent } from './feature/pages/checkout-page/checkout-page.component';
 import { AuthGuard } from './auth/guards/auth.guard';
+import { PaymentPageComponent } from './feature/pages/payment-page/payment-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,6 +22,8 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
   { path: 'checkout', component: CheckoutPageComponent,canActivate:[AuthGuard]},
+  { path: 'payment', component: PaymentPageComponent,canActivate:[AuthGuard] },
+
 ];
 
 @NgModule({
