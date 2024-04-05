@@ -68,7 +68,7 @@ router.get('/newOrderForCurrentUser', asyncHandler( async (req:any,res ) => {
 
 
 
-
+export default router;
 async function getNewOrderForCurrentUser(req: any) {
     return await OrderModel.findOne({ user: req.user.id, status: OrderStatus.NEW });
 }

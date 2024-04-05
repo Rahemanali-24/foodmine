@@ -1,34 +1,48 @@
 <div class="container">
-    <div class="header">
-        <app-title title="Order Summary" fontSize="1.6rem"></app-title>
-    </div>
-    <div class="content">
-        <div class="summary">
-            <div class="summary-item">
-                <h3>Name:</h3>
-                <span>{{order.name}}</span>
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="card mb-4 shadow">
+          <div class="card-body">
+            <h2 class="card-title mb-4">Order Summary</h2>
+            <div class="summary">
+              <div>
+                <h5>Name:</h5>
+                <span>{{ order.name }}</span>
+              </div>
+  
+              <div>
+                <h5>Address:</h5>
+                <span>{{ order.address }}</span>
+              </div>
             </div>
-            <div class="summary-item">
-                <h3>Address:</h3>
-                <span>{{order.address}}</span>
-            </div>
-        </div>
-        <div class="order-items">
             <app-order-items-list [order]="order"></app-order-items-list>
+            <hr />
+          </div>
         </div>
-    </div>
-    <div class="map">
-        <div class="map-header">
-            <app-title title="Shipping Address" fontSize="1.6rem"></app-title>
-        </div>
-        <div class="map-content">
+      </div>
+      <div class="col-lg-5">
+        <div class="card mb-4 shadow">
+          <div class="card-body">
+            <h2 class="card-title mb-4">Shipping Address</h2>
             <app-map [order]="order" [readonly]="true"></app-map>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="buttons-container">
-        <div class="buttons text-center">
-            <app-paypal-button [order]="order">
-            </app-paypal-button>
+    <div class="row justify-content-center">
+      <div class="col-lg-7">
+        <div class="card mb-4 shadow">
+          <div class="card-body text-center">
+            <h2 class="card-title mb-4">Proceed to Payment</h2>
+            <p class="lead">
+              Please review your order details and proceed to payment to complete
+              your purchase.
+            </p>
+            <p><strong>Total_Price: </strong> ${{ order.totalPrice }}</p>
+            <app-paypal-button [order]="order"> </app-paypal-button>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  

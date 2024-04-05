@@ -67,7 +67,7 @@ router.get("/", asyncHandler(
     router.get('/tag/:tagName',asyncHandler(
       async(req,res) =>{
         const foods = await FoodModel.find({tags:req.params.tagName})
-        res.send(foods);
+        res.send(foods);0
       }
     ))
   
@@ -82,3 +82,5 @@ router.get("/", asyncHandler(
 
 
   export default router;
+
+
