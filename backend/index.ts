@@ -19,7 +19,7 @@ app.use(
     credentials: true,
     // origin: ["http://localhost:4200"],
 
-    origin: ["https://foodmine-eight.vercel.app"],
+    origin: ["https://foodmine-frontend-opal.vercel.app/home"],
   })
 );
 app.use("/api/foods", foodRouter);
