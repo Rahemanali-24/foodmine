@@ -1,6 +1,7 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { CartService } from 'src/app/services/cart.service';
 import { Order } from 'src/app/shared/models/order';
 
 @Component({
@@ -13,7 +14,7 @@ export class PaypalButtonComponent implements OnInit{
   @Input()
 order!:Order
    
-constructor(private router:Router,private tosterservice:ToastrService) { }
+constructor(private router:Router,private tosterservice:ToastrService,private cartService:CartService) { }
 handler:any = null;
 ngOnInit() {
   this.loadStripe();
@@ -29,7 +30,9 @@ pay(amount: any) {
       // alert('success');
       this.tosterservice.success('Payment successfull')
       this.router.navigate(['/home']); 
+      this.cartService.clearCart();
     }
+    
   });
 
 
