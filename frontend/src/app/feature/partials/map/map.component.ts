@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { LatLng, LatLngExpression, LatLngTuple, LeafletMouseEvent, Map, Marker, icon, map, marker, tileLayer } from 'leaflet';
 import { MapService } from 'src/app/services/map.service';
 import { Order } from 'src/app/shared/models/order';
@@ -13,6 +13,11 @@ export class MapComponent {
   order!:Order;
   @Input()
   readonly = false;
+
+
+  @Output() locationFound: EventEmitter<string> = new EventEmitter<string>();
+
+
   private readonly MARKER_ZOOM_LEVEL = 16;
   private readonly MARKER_ICON = icon({
     iconUrl:
