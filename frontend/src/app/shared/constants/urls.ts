@@ -1,6 +1,6 @@
-const BASE_URL = 'http://localhost:5000';
+// const BASE_URL = 'http://localhost:5000';
 
-// const BASE_URL = 'https://foodmine-zeta.vercel.app';
+const BASE_URL = 'https://foodmine-zeta.vercel.app';
     
 
 export const FOODS_URL = BASE_URL + '/api/foods';

@@ -17,9 +17,9 @@ app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:4200"],
+    // origin: ["http://localhost:4200"],
 
-    // origin: ["https://foodmine-frontend-opal.vercel.app"],
+    origin: ["https://foodmine-frontend-opal.vercel.app"],
   })
 );
 app.use("/api/foods", foodRouter);
