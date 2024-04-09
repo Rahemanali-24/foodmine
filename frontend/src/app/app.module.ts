@@ -34,6 +34,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
 
 @NgModule({
   declarations: [
+    
     AppComponent,
     InputValidationComponent,
     TextInputComponent,
@@ -67,6 +68,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
     HttpClientModule,
     ReactiveFormsModule,
     NgxPayPalModule,
+    HttpClientModule,
     ToastrModule.forRoot({
       timeOut: 3000,
       positionClass: 'toast-bottom-right',

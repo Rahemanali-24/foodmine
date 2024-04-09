@@ -50,7 +50,7 @@
                     <p class="mb-3" style="color: #6c757d;"><strong>Name:</strong> {{ checkoutForm.value.name }}</p>
                     <p class="mb-3" style="color: #6c757d;"><strong>Address:</strong> {{ checkoutForm.value.address }}</p>
                     
-                        <app-map [order]="order" (locationFound)="updateAddress($event)"></app-map>
+                    <app-map [order]="order" [checkoutForm]="checkoutForm" (locationFound)="updateAddressAndLocation($event)"></app-map>
 
                     
                 </div>
