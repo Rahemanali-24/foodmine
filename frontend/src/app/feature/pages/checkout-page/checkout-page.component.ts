@@ -69,7 +69,7 @@ export class CheckoutPageComponent  implements OnInit{
     console.log(this.order);
   }
 
-  updateAddress(address: string) {
+    updateAddress(address: string) {
     this.checkoutForm.get('address')?.setValue(address);
   }
 

@@ -15,7 +15,7 @@ export class MapComponent {
   readonly = false;
 
 
-  @Output() locationFound: EventEmitter<string> = new EventEmitter<string>();
+  @Output() locationFound: EventEmitter<{ location: LatLng, address: string }> = new EventEmitter<{ location: LatLng, address: string }>();
 
 
   private readonly MARKER_ZOOM_LEVEL = 16;
